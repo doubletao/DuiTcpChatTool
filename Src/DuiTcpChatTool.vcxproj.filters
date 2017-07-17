@@ -22,6 +22,7 @@
     <None Include="DuiTcpChatTool.ico">
       <Filter>资源文件</Filter>
     </None>
+    <None Include="..\bin\CDlgChatWnd.xml" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -36,12 +37,24 @@
     <ClInclude Include="DuiTcpChatTool.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="DlgChatWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalFunction.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="DuiTcpChatTool.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgChatWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GlobalFunction.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

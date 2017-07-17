@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window mininfo="100,100" size="720,576">
+	<VerticalLayout bkcolor="#FFF0F0F0">
+			<HorizontalLayout bkcolor="#FFF0F0F0">
+				<HorizontalLayout bkcolor="#FFF0F0F0">
+          <RichEdit name="EditChatLog" multiline="true" vscrollbar="true" autovscroll="true" enabled="true" readonly="true" bkcolor="#FF222C28" bordercolor="FFD7DEF0" bordersize="1" nativebkcolor="#FF222C28" bordervisible="true" textcolor="FFFFFFFF" text="这是聊天记录"/>
+				</HorizontalLayout>
+				<HorizontalLayout bkcolor="#FFF0F0F0">
+          <RichEdit name="EditLoginLog" multiline="true" vscrollbar="true" autovscroll="true" enabled="true" readonly="true" bkcolor="#FF222C28" bordercolor="FFD7DEF0" bordersize="1" nativebkcolor="#FF222C28" bordervisible="true" textcolor="FFFFFFFF" text="这是网络记录"/>
+					<List name="ListUser" vscrollbar="true" autovscroll="true" enabled="true" readonly="true" bkcolor="#FF222C28" bordercolor="FFD7DEF0" bordersize="1" bordervisible="true" textcolor="FFFFFFFF"/>
+				</HorizontalLayout>
+			</HorizontalLayout>
+			<HorizontalLayout bkcolor="#FFF0F0F0" height="30">
+				<Edit name="EditInputBox" multiline="false" height="30" bkcolor="#FF222C28" nativebkcolor="#FF222C28" vscrollbar="false" autovscroll="false" enabled="true" readonly="false" bordercolor="FFD7DEF0" bordersize="1" bordervisible="true" textcolor="FFFFFFFF" text="这还是聊天记录"/>
+				<Button name="ButtonSend" height="30" width="70" text="发送" bordercolor="FF133861" bordersize="1" borderround="2,2" focusbordercolor="FFBFDBAB" hottextcolor="FF133861" pushedtextcolor="FFBFDBAB"/>
+			</HorizontalLayout>
+	</VerticalLayout>
+</Window>
