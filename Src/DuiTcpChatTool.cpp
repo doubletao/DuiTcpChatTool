@@ -14,7 +14,7 @@ public:
 	{
 		if (msg.sType == _T("click"))
 		{
-			if (msg.pSender->GetName())
+			if (msg.pSender->GetName() == _T("btntest"))
 			{
 				int i = 0;
 				i++;
@@ -30,11 +30,18 @@ public:
 		{
 			CControlUI *pWnd = new CButtonUI;
 			pWnd->SetText(_T("Hello World"));   // 设置文字
+			pWnd->SetName(_T("btntest"));
 			pWnd->SetBkColor(0xfff0f0f0);       // 设置背景色
 
 			m_PaintManager.Init(m_hWnd);
 			m_PaintManager.AttachDialog(pWnd);
+			m_PaintManager.AddNotifier(this);
 			return lRes;
+		}
+		else if (uMsg == WM_LBUTTONDOWN)
+		{
+			int i = 0;
+			i++;
 		}
 
 		if( m_PaintManager.MessageHandler(uMsg, wParam, lParam, lRes) ) 
