@@ -70,6 +70,10 @@ void CDlgChatWnd::Notify(TNotifyUI& msg)
 			CString strChatLog = m_pEditChatLog->GetText();
 			strChatLog.AppendFormat(_T("\n%s"), strMsg);
 			m_pEditChatLog->SetText(strChatLog);
+
+			CListTextElementUI* pListElement = new CListTextElementUI;
+			m_pListUser->Add(pListElement);
+			pListElement->SetText(0, strMsg);
 		}
 	}
 }

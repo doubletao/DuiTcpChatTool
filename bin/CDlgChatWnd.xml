@@ -7,7 +7,12 @@
 				</HorizontalLayout>
 				<HorizontalLayout bkcolor="#FFF0F0F0">
           <RichEdit name="EditLoginLog" multiline="true" vscrollbar="true" autovscroll="true" enabled="true" readonly="true" bkcolor="#FF222C28" bordercolor="FFD7DEF0" bordersize="1" nativebkcolor="#FF222C28" bordervisible="true" textcolor="FFFFFFFF" text="这是网络记录"/>
-					<List name="ListUser" vscrollbar="true" autovscroll="true" enabled="true" readonly="true" bkcolor="#FF222C28" bordercolor="FFD7DEF0" bordersize="1" bordervisible="true" textcolor="FFFFFFFF"/>
+					<List name="ListUser" vscrollbar="true" autovscroll="true" enabled="true" readonly="true" bkcolor="#FF222C28" bordercolor="FFD7DEF0" bordersize="1" bordervisible="true" textcolor="FFFFFFFF">
+						<ListHeader height="24" menu="true">
+							<ListHeaderItem text="用户" sepwidth="1"/>
+							<ListHeaderItem text="ip" sepwidth="1"/>
+						</ListHeader>
+					</List>
 				</HorizontalLayout>
 			</HorizontalLayout>
 			<HorizontalLayout bkcolor="#FFF0F0F0" height="30">
