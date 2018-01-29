@@ -1,18 +1,19 @@
 #pragma once
 
-class CDlgChatWnd : public CWindowWnd, public INotifyUI
+class CDlgChatWnd : public WindowImplBase
 {
 public:
 	CDlgChatWnd(void);
 	virtual ~CDlgChatWnd(void);
 	virtual LPCTSTR GetWindowClassName() const;
-	virtual LRESULT HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam);
+	virtual void InitWindow();
 	virtual void Notify(TNotifyUI& msg);
+
+	virtual CDuiString GetSkinFolder();
+	virtual CDuiString GetSkinFile();
 protected:
-	void OnInitialDlg();//加载xml等初始化动作
 	void InitialCtrl();//映射控件到成员变量
 protected:
-	CPaintManagerUI m_PaintManager;
 
 	CButtonUI * m_pBtnSend;
 	CListUI * m_pListUser;

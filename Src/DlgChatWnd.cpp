@@ -16,39 +16,20 @@ LPCTSTR CDlgChatWnd::GetWindowClassName() const
 	return _T("DUIMainFrame");
 }
 
-LRESULT CDlgChatWnd::HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
+void CDlgChatWnd::InitWindow()
 {
-	LRESULT lRes = 0;
-
-	if( uMsg == WM_CREATE ) 
-	{
-		OnInitialDlg();
-		InitialCtrl();
-		return lRes;
-	}
-
-	if( m_PaintManager.MessageHandler(uMsg, wParam, lParam, lRes) ) 
-	{
-		return lRes;
-	}
-
-	return __super::HandleMessage(uMsg, wParam, lParam);
+	InitialCtrl();
 }
 
-void CDlgChatWnd::OnInitialDlg()
+CDuiString CDlgChatWnd::GetSkinFolder()
 {
-	//初始化manager
-	m_PaintManager.Init(m_hWnd);
-	//解析xml
-	CDialogBuilder builder;
 	CString strXmlPath = CGlobalFunction::GetCurPath();
-	strXmlPath.Append(_T("\\CDlgChatWnd.xml"));
-	CControlUI* pRoot = builder.Create(strXmlPath.GetBuffer(), (UINT)0, NULL, &m_PaintManager);
-	ASSERT(pRoot && "Failed to parse XML");
-	//attach对话框内容到manager
-	m_PaintManager.AttachDialog(pRoot);
-	//消息由自己解析
-	m_PaintManager.AddNotifier(this);
+	return strXmlPath.GetBuffer();
+}
+
+CDuiString CDlgChatWnd::GetSkinFile()
+{
+	return _T("\\CDlgChatWnd.xml");
 }
 
 void CDlgChatWnd::InitialCtrl()
@@ -62,6 +43,7 @@ void CDlgChatWnd::InitialCtrl()
 
 void CDlgChatWnd::Notify(TNotifyUI& msg)
 {
+	bool bHandled = false;
 	if(msg.sType == _T("click"))
 	{
 		if(msg.pSender == m_pBtnSend)
@@ -74,6 +56,11 @@ void CDlgChatWnd::Notify(TNotifyUI& msg)
 			CListTextElementUI* pListElement = new CListTextElementUI;
 			m_pListUser->Add(pListElement);
 			pListElement->SetText(0, strMsg);
+			bHandled = true;
 		}
+	}
+	if (!bHandled)
+	{
+		WindowImplBase::Notify(msg);
 	}
 }
